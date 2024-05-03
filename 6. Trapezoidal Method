@@ -1,0 +1,22 @@
+def f(x):
+    return x / (1 + x)
+
+# Prompt user for input
+def get_input(prompt):
+    while True:
+        try:
+            value = float(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+x0 = get_input("Enter lower limit of integration: ")
+xn = get_input("Enter upper limit of integration: ")
+n = int(get_input("Enter number of sub intervals: "))
+h = (xn - x0) / n
+print("h: %f" % h)
+
+# Compute the integration using the trapezoidal rule
+sum_terms = sum(f(x0 + k * h) for k in range(1, n))
+integration = h/2 * (f(x0) + f(xn) + 2 * sum_terms)
+print('Value of Integration: ', integration)
