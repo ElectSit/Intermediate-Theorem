@@ -1,0 +1,14 @@
+def f(x):
+
+    y=x*x+2*x-5
+    return y
+
+a=float(input('Enter value of a:'))
+b=float(input('Enter value of b:'))
+if f(a)*f(b)<0:
+
+    print('root lies in the interval [a,b]=',a,b)
+
+else:
+
+    print('No lies in the interval [a,b]=',a,b)
